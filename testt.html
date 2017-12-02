@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>codereview2price</title>
+	<link rel="stylesheet" href="stt.css">
+</head>
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+img{
+	border-radius: 15%;
+}
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 500px; 
+    margin-top: 50px;
+    background-color: none;
+    
+}
+
+
+.row:after {
+    content: "";
+    display: inline;
+    clear: both;
+
+}
+.bot{
+	border-radius:25px;
+	background-color: lightblue;
+   font-weight: bold;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width:100px;
+    height:80px;
+
+}
+.bot:hover{
+	width: 80px;
+    height: 80px;
+    background-color: yellow;
+}
+h1{
+	width:100%;
+}
+</style>
+<body>
+	<div class="flex-container">
+		  <div>
+		  <div class="header">
+				<img src="https://lms.codefactory.wien/pluginfile.php/1574/mod_assign/intro/cr2-logo.png" width="40" height="40">
+		 </div>
+		 </div>
+		  <div><p>Price comparison</p></div>
+		   
+	</div>
+
+	<div class="row">
+  <div class="column" >
+    <div class="first">
+	    		<div id="pic1">
+  		 			<img src="https://lms.codefactory.wien/pluginfile.php/1574/mod_assign/intro/cr2-amsterdam.jpg" alt="" width="400" height="300">
+  				</div>
+         		<div class="desc">
+                 	<table  cellspacing="3" cellpadding="3">
+         				<tr>
+         				<th ><p id="t1"></p></th>
+						<script>
+							function cname(cityname) {
+								
+								return(cityname);
+							}
+							document.getElementById("t1").innerHTML= cname("Amsterdam");
+						</script>
+
+        				<th><p id="av1"></p>
+							<script >
+							amst=[1500,500,1800,700];
+							function avg(a,b,c,d){
+								var total=a+b+c+d;
+								var av1=(total/4);
+								return(av1)
+							}
+								document.getElementById("av1").innerHTML= avg(1500,500,1800,700);
+							</script>
+        				</th>
+								
+         				</tr>
+		         		<tr>
+        	 			<th ><p id="t2"></p></th>
+							<script>
+							function conname(contname) {
+								
+								return(contname);
+							}
+							document.getElementById("t2").innerHTML= conname("Netherlands");
+						</script>
+        	 			
+
+         				<th ><p id="t3"></p></th>
+							<script>
+							function avp(avp) {
+								
+								return(avp);
+							}
+							document.getElementById("t3").innerHTML= avp("Average price");
+						</script>
+    		     		</tr>
+
+         			</table>
+         		</div>
+      		</div>
+  </div>
+  <div class="column" >
+    
+    <div class="second">
+  			<div id="pic2">
+   				 <img src="https://lms.codefactory.wien/pluginfile.php/1574/mod_assign/intro/cr2-london.jpg" alt" width="400" height="300">
+			</div>
+       		 <div class="desc"> 
+      			<table   cellspacing="3" cellpadding="3">
+         			<tr>
+         			<th ><p id="t12"></p></th>
+         			<script>
+							function cname1(cityname1) {
+								
+								return(cityname1);
+							}
+							document.getElementById("t12").innerHTML= cname("London");
+						</script>
+         			<th ><p id="av2"></p>
+						<script >
+						lon=[2500,1500,1000,900];
+							function avg1(a,b,c,d){
+								var sum=a+b+c+d;
+								var av2=(sum/4);
+								return(av2);
+							}
+								document.getElementById("av2").innerHTML= avg1(2500,1500,1000,900);
+							</script></th>
+         			</tr>
+         			<tr>
+         				<th ><p id="t22"></p></th>
+							<script>
+							function am(am) {
+								
+								return(am);
+							}
+							document.getElementById("t22").innerHTML= am("Unitedkingdom");
+						</script>
+         				<th ><p id="t31"> Average prices</p></th>
+         						<script>
+								function pr(pr) {
+								
+										return(pr);
+								}
+							document.getElementById("t31").innerHTML= pr("Average Price");
+						</script>
+         			</tr>
+	         	</table>
+    		   </div>
+  		</div>
+  </div>
+</div>
+<center>
+<h1 id="comp" width="100%"></h1>
+<script>
+	var a=avg1(2500,1500,1000,900);
+	var b=avg(1500,500,1800,700);
+
+	if(b<a){
+		document.write("<strong>Amsterdam</strong>"+" will be more affordable than " + "<strong>London</strong>" +" for the New Years celebration.");
+	}else{
+			document.write(a+" will be more affordable than " + b+" for the New Years celebration.")
+	}
+</script>
+	</center>
+<center>
+	<h2>difrence price</h2>
+</center>
+	<center>
+	<button class="bot" onclick="openWin()"><p id="demo"></p></button>
+	</center>
+<p id="demo"></p>
+<script>
+function openWin(a,b) {
+	
+return(b-a);
+    
+}
+
+document.getElementById("demo").innerHTML= openWin(1125,1475);
+</script>
+</div>
+</div>
+</body>
+</html>
